@@ -13,7 +13,7 @@ function addImage(fileName, imageSrc) {
 
     const button = document.createElement('button');
     button.classList.add('btn');
-    button.addEventListener('click', () => deleteData(div, fileName));
+    button.addEventListener('click',() => deleteFile(div, fileName));
     button.innerHTML = 'Delete';
 
     div.appendChild(image);
@@ -57,7 +57,7 @@ function loadFiles() {
     }
 }
 
-function deleteData(div, fileName) {
+function deleteFile(div, fileName) {
     div.parentElement.removeChild(div);
     localStorage.removeItem(fileName);
 }

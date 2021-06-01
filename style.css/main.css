@@ -10,7 +10,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: aliceblue;
+  background-color: rgba(42, 108, 250, 0.123);
+  font-family: "Roboto", sans-serif;
 }
 
 form {
@@ -23,7 +24,7 @@ form {
   width: 80%;
   height: 80%;
   padding: 0 20px;
-  background-color: rgb(245, 232, 216);
+  background-color: aliceblue;
   border-radius: 20px;
   display: flex;
   flex-direction: column;

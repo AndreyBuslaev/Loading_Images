@@ -81,3 +81,32 @@ form {
 .upload-file__label:hover {
   border: 2px dashed #58862d;
 }
+
+.output-field {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.img-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.thumb-text {
+  margin: 10px;
+}
+
+.btn {
+  width: 80px;
+  height: 25px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(226, 164, 164);
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.btn:hover {
+  background-color: rgb(224, 77, 77);
+}

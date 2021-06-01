@@ -1,21 +1,26 @@
 
 function handleFileSelect(evt) {
-    var files = evt.target.files;
+    let files = evt.target.files;
 
-    for (var i = 0, f; f = files[i]; i++) {
+    for (let i = 0, f; f = files[i]; i++) {
 
       if (!f.type.match('image.*')) {
         continue;
       }
 
-      var reader = new FileReader();
+      let reader = new FileReader();
 
       reader.onload = (function(theFile) {
         return function(e) {
-          var span = document.createElement('span');
-          span.innerHTML = ['<img class="thumb" src="', e.target.result,
-                            '" title="', escape(theFile.name), '"/>'].join('');
-          document.getElementById('list').insertBefore(span, null);
+          let div = document.createElement('div');
+          div.className = 'img-block'
+        //   let button = document.createElement('button');
+        //   button.className = 'btn';
+        //   button.innerHTML = 'Delete';
+        div.innerHTML = ['<img class="thumb" src="', e.target.result,
+                            '" title="', escape(theFile.name), '"/>' + '<p class="thumb-text">',theFile.name,'</p>' + '<button class = "btn">Delete</button>'].join('');
+            document.getElementById('list').insertBefore(div, null)           
+        //   document.getElementById('list').insertBefore(button, null);
         };
       })(f);
 

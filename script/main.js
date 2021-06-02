@@ -13,7 +13,10 @@ function addImage(fileName, imageSrc) {
 
     const button = document.createElement('button');
     button.classList.add('btn');
-    button.addEventListener('click',() => deleteFile(div, fileName));
+    button.addEventListener('click', (e) => {
+        button.disabled = true;
+        deleteFile(e, div, fileName);
+    });
     button.innerHTML = 'Delete';
 
     div.appendChild(image);
@@ -57,12 +60,13 @@ function loadFiles() {
     }
 }
 
-function deleteFile(div, fileName) {
+function deleteFile(e, div, fileName) {
+    e.preventDefault();
    div.classList.add('img-block-deleted');
     setTimeout(()=> {
-    div.parentElement.removeChild(div);
-    localStorage.removeItem(fileName);
-    },2000)  
+        div.parentElement.removeChild(div);
+        localStorage.removeItem(fileName);
+    },1500)  
 }
 
 window.addEventListener('load', loadFiles);

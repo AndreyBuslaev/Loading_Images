@@ -58,8 +58,21 @@ function loadFiles() {
 }
 
 function deleteFile(div, fileName) {
+   div.classList.add('img-block-deleted');
+    setTimeout(()=> {
     div.parentElement.removeChild(div);
     localStorage.removeItem(fileName);
+    },2000)  
 }
 
 window.addEventListener('load', loadFiles);
+
+
+
+
+
+
+
+
+
+

@@ -95,9 +95,12 @@ form {
 }
 
 .img-block-deleted {
-  text-decoration: line-through;
-  opacity: 0.3;
+  opacity: 0;
   transition: all 2s ease;
+}
+
+.img-block-deleted p {
+  text-decoration: line-through;
 }
 
 .thumb-text {

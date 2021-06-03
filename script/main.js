@@ -11,10 +11,16 @@ function addImage(fileName, imageSrc) {
     para.classList.add('thumb-text');
     para.innerHTML = fileName;
 
+    const btnClear = document.querySelector('.btn-clear');
+    btnClear.addEventListener('click', (e) => {
+        button.disabled = true;
+        deleteFile(e, div, fileName);
+    });
+
     const button = document.createElement('button');
     button.classList.add('btn');
     button.addEventListener('click', (e) => {
-        // button.disabled = true;
+        button.disabled = true;
         deleteFile(e, div, fileName);
     });
     button.innerHTML = 'Delete';
@@ -59,9 +65,6 @@ function loadFiles() {
         addImage(fileName, localStorage.getItem(fileName));
     }
 }
-
-const btnClear = document.querySelector('.btn-clear');
-btnClear.addEventListener('click', () => localStorage.clear());
 
 function deleteFile(e, div, fileName) {
     e.preventDefault();

@@ -14,7 +14,7 @@ function addImage(fileName, imageSrc) {
     const button = document.createElement('button');
     button.classList.add('btn');
     button.addEventListener('click', (e) => {
-        button.disabled = true;
+        // button.disabled = true;
         deleteFile(e, div, fileName);
     });
     button.innerHTML = 'Delete';
@@ -60,9 +60,12 @@ function loadFiles() {
     }
 }
 
+const btnClear = document.querySelector('.btn-clear');
+btnClear.addEventListener('click', () => localStorage.clear());
+
 function deleteFile(e, div, fileName) {
     e.preventDefault();
-   div.classList.add('img-block-deleted');
+    div.classList.add('img-block-deleted');
     setTimeout(()=> {
         div.parentElement.removeChild(div);
         localStorage.removeItem(fileName);

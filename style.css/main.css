@@ -23,7 +23,7 @@ form {
 .container {
   width: 80%;
   height: 80%;
-  padding: 0 20px;
+  padding: 0 20px 30px 20px;
   background-color: aliceblue;
   border-radius: 20px;
   display: flex;
@@ -38,6 +38,7 @@ form {
 
 .upload-file__wrapper {
   margin: 30px 0;
+  display: flex;
 }
 
 .upload-file__input {
@@ -81,6 +82,20 @@ form {
 
 .upload-file__label:hover {
   border: 2px dashed #58862d;
+}
+
+.btn-clear {
+  font-size: 16px;
+  border: 2px dashed #150b22;
+  cursor: pointer;
+  background-color: inherit;
+  border-radius: 6px;
+  margin-left: 40px;
+}
+
+.btn-clear:hover {
+  color: #ff0000;
+  border: 2px dashed #ff0000;
 }
 
 .output-field {
